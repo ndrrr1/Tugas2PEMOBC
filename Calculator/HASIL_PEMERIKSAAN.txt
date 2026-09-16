@@ -1,0 +1,20 @@
+HASIL PEMERIKSAAN PROYEK CALCULATOR
+Tanggal: 16 September 2026
+
+LULUS:
+- Kompilasi mesin hitung dan state input dengan Java 17.
+- 76 pemeriksaan matematika, input, memori, persen, dan kondisi error.
+- Parsing sintaks 3 file Java aplikasi.
+- Parsing 15 file XML dan pengecekan referensi resource secara statis.
+- 51 tombol memiliki android:onClick dan handler Java yang sesuai.
+- Tidak ada LinearLayout pada XML dan tidak ada setOnClickListener pada source Java.
+- Pemeriksaan sintaks shell script bootstrap.
+
+BELUM DIVERIFIKASI:
+- Build Android/Gradle, resolusi dependency, dan kompilasi resource Android.
+- Menjalankan script unduhan Gradle di Windows/macOS/Linux.
+- Tampilan dan interaksi pada emulator/perangkat Android.
+
+Android SDK dan emulator tidak tersedia di lingkungan pembuatan.
+Gradle Wrapper resmi perlu diunduh melalui script persiapan pada komputer pengguna.
+Lakukan Gradle Sync dan Run sebelum mengumpulkan tugas.

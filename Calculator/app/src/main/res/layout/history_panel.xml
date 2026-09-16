@@ -1,0 +1,13 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@color/bg" android:padding="20dp">
+    <Button android:id="@+id/closeHistory" style="@style/Chip" android:text="Kembali" android:tag="CLOSE_HISTORY" android:onClick="onButtonClick"/>
+    <Button android:id="@+id/clearHistory" style="@style/Chip" android:layout_alignParentEnd="true" android:text="Hapus riwayat" android:tag="CLEAR_HISTORY" android:onClick="onButtonClick"/>
+    <TextView android:id="@+id/historyTitle" android:layout_below="@id/closeHistory" android:layout_marginTop="22dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Riwayat hitungan" android:textSize="28sp" android:textColor="@color/text"/>
+    <TextView android:id="@+id/historyInfo" android:layout_below="@id/historyTitle" android:layout_marginTop="8dp" android:layout_marginBottom="16dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:text="50 hasil terbaru · Ketuk untuk memakai hasil"
+        android:textSize="13sp" android:textColor="@color/muted"/>
+    <ScrollView android:layout_below="@id/historyInfo" android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:id="@+id/historyRows" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </ScrollView>
+</RelativeLayout>

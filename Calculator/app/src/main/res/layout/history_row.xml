@@ -1,0 +1,5 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <Button android:id="@+id/historyEntry" style="@style/Key" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:minHeight="96dp" android:padding="18dp" android:gravity="end|center_vertical" android:textSize="17sp" android:singleLine="false"
+        android:onClick="onHistoryResultClick"/>
+</RelativeLayout>

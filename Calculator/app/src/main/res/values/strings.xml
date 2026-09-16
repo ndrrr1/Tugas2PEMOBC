@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="subtitle">Ruang kecil untuk ide besar.</string>
+    <string name="standard">Standar</string>
+    <string name="scientific">Scientific</string>
+    <string name="history">Riwayat</string>
+    <string name="copy">Salin</string>
+    <string name="hint">Ketik ekspresi, temukan hasilnya.</string>
+    <string name="history_empty">Belum ada perhitungan.
+Hasil akan tersimpan setelah menekan =.</string>
+</resources>

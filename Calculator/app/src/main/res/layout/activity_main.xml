@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg">
+<ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:clipToPadding="false">
+<RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+    <TextView android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="48dp" android:gravity="center_vertical"
+        android:text="@string/app_name" android:textSize="24sp" android:fontFamily="sans-serif-medium" android:textColor="@color/text"/>
+    <Button android:id="@+id/themeButton" style="@style/Chip" android:layout_alignParentEnd="true" android:text="☀" android:textSize="24sp"
+        android:contentDescription="Ganti tema gelap atau terang" android:tag="THEME" android:onClick="onButtonClick"/>
+    <TextView android:id="@+id/subtitle" android:layout_below="@id/title" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="@string/subtitle" android:textSize="11sp" android:textColor="@color/muted" android:layout_marginBottom="12dp"/>
+    <RelativeLayout android:id="@+id/displayCard" android:layout_below="@id/subtitle" android:layout_width="match_parent" android:layout_height="150dp"
+        android:padding="14dp" android:background="@drawable/bg_card">
+        <TextView android:id="@+id/status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="STANDAR  ·  DEG"
+            android:textColor="@color/accent" android:letterSpacing="0.08" android:textSize="11sp" android:fontFamily="sans-serif-medium"/>
+        <HorizontalScrollView android:id="@+id/expressionScroll" android:layout_below="@id/status" android:layout_marginTop="12dp"
+            android:layout_width="match_parent" android:layout_height="32dp" android:fillViewport="true" android:scrollbars="none">
+            <TextView android:id="@+id/expression" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="end|center_vertical"
+                android:textColor="@color/muted" android:textSize="20sp" android:singleLine="true" android:text="0"/>
+        </HorizontalScrollView>
+        <TextView android:id="@+id/result" android:layout_below="@id/expressionScroll" android:layout_width="match_parent" android:layout_height="56dp"
+            android:text="0" android:gravity="end|center_vertical" android:textColor="@color/text" android:textSize="42sp" android:fontFamily="sans-serif-light"
+            android:maxLines="1" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="18sp" android:autoSizeMaxTextSize="48sp" android:autoSizeStepGranularity="1sp"
+            android:accessibilityLiveRegion="polite"/>
+        <TextView android:id="@+id/message" android:layout_alignParentBottom="true" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="@string/hint" android:textSize="11sp" android:maxLines="2" android:textColor="@color/muted"/>
+    </RelativeLayout>
+    <RelativeLayout android:id="@+id/toolbar" android:layout_below="@id/displayCard" android:layout_width="match_parent" android:layout_height="52dp" android:paddingTop="8dp">
+        <Button android:id="@+id/modeButton" style="@style/Chip" android:text="@string/scientific" android:tag="MODE" android:onClick="onButtonClick"/>
+        <Button android:id="@+id/historyButton" style="@style/Chip" android:layout_toEndOf="@id/modeButton" android:layout_marginStart="8dp"
+            android:text="@string/history" android:tag="HISTORY" android:onClick="onButtonClick"/>
+        <Button android:id="@+id/copyButton" style="@style/Chip" android:layout_alignParentEnd="true" android:text="@string/copy" android:tag="COPY" android:onClick="onButtonClick"/>
+    </RelativeLayout>
+    <RelativeLayout android:id="@+id/sciencePad" android:layout_below="@id/toolbar" android:layout_width="match_parent" android:layout_height="312dp"
+        android:visibility="gone" android:layout_marginBottom="8dp">
+<Button android:id="@+id/s0" style="@style/Key.Science" android:text="sin" android:tag="sin(" android:contentDescription="sin" android:onClick="onButtonClick" android:layout_marginTop="0dp" android:layout_marginStart="0dp"/>
+<Button android:id="@+id/s1" style="@style/Key.Science" android:text="cos" android:tag="cos(" android:contentDescription="cos" android:onClick="onButtonClick" android:layout_marginTop="0dp" android:layout_marginStart="76dp"/>
+<Button android:id="@+id/s2" style="@style/Key.Science" android:text="tan" android:tag="tan(" android:contentDescription="tan" android:onClick="onButtonClick" android:layout_marginTop="0dp" android:layout_marginStart="152dp"/>
+<Button android:id="@+id/angleButton" style="@style/Key.Science" android:text="DEG" android:tag="ANGLE" android:contentDescription="DEG" android:onClick="onButtonClick" android:layout_marginTop="0dp" android:layout_marginStart="228dp"/>
+<Button android:id="@+id/s4" style="@style/Key.Science" android:text="sin⁻¹" android:tag="asin(" android:contentDescription="sin⁻¹" android:onClick="onButtonClick" android:layout_marginTop="64dp" android:layout_marginStart="0dp"/>
+<Button android:id="@+id/s5" style="@style/Key.Science" android:text="cos⁻¹" android:tag="acos(" android:contentDescription="cos⁻¹" android:onClick="onButtonClick" android:layout_marginTop="64dp" android:layout_marginStart="76dp"/>
+<Button android:id="@+id/s6" style="@style/Key.Science" android:text="tan⁻¹" android:tag="atan(" android:contentDescription="tan⁻¹" android:onClick="onButtonClick" android:layout_marginTop="64dp" android:layout_marginStart="152dp"/>
+<Button android:id="@+id/s7" style="@style/Key.Science" android:text="π" android:tag="π" android:contentDescription="π" android:onClick="onButtonClick" android:layout_marginTop="64dp" android:layout_marginStart="228dp"/>
+<Button android:id="@+id/s8" style="@style/Key.Science" android:text="log" android:tag="log(" android:contentDescription="log" android:onClick="onButtonClick" android:layout_marginTop="128dp" android:layout_marginStart="0dp"/>
+<Button android:id="@+id/s9" style="@style/Key.Science" android:text="ln" android:tag="ln(" android:contentDescription="ln" android:onClick="onButtonClick" android:layout_marginTop="128dp" android:layout_marginStart="76dp"/>
+<Button android:id="@+id/s10" style="@style/Key.Science" android:text="eˣ" android:tag="exp(" android:contentDescription="eˣ" android:onClick="onButtonClick" android:layout_marginTop="128dp" android:layout_marginStart="152dp"/>
+<Button android:id="@+id/s11" style="@style/Key.Science" android:text="e" android:tag="e" android:contentDescription="e" android:onClick="onButtonClick" android:layout_marginTop="128dp" android:layout_marginStart="228dp"/>
+<Button android:id="@+id/s12" style="@style/Key.Science" android:text="xʸ" android:tag="^" android:contentDescription="xʸ" android:onClick="onButtonClick" android:layout_marginTop="192dp" android:layout_marginStart="0dp"/>
+<Button android:id="@+id/s13" style="@style/Key.Science" android:text="x!" android:tag="!" android:contentDescription="x!" android:onClick="onButtonClick" android:layout_marginTop="192dp" android:layout_marginStart="76dp"/>
+<Button android:id="@+id/s14" style="@style/Key.Science" android:text="1/x" android:tag="INV" android:contentDescription="1/x" android:onClick="onButtonClick" android:layout_marginTop="192dp" android:layout_marginStart="152dp"/>
+<Button android:id="@+id/s15" style="@style/Key.Science" android:text="Ans" android:tag="Ans" android:contentDescription="Ans" android:onClick="onButtonClick" android:layout_marginTop="192dp" android:layout_marginStart="228dp"/>
+<Button android:id="@+id/s16" style="@style/Key.Science" android:text="MC" android:tag="MC" android:contentDescription="MC" android:onClick="onButtonClick" android:layout_marginTop="256dp" android:layout_marginStart="0dp"/>
+<Button android:id="@+id/s17" style="@style/Key.Science" android:text="MR" android:tag="MR" android:contentDescription="MR" android:onClick="onButtonClick" android:layout_marginTop="256dp" android:layout_marginStart="76dp"/>
+<Button android:id="@+id/s18" style="@style/Key.Science" android:text="M+" android:tag="M+" android:contentDescription="M+" android:onClick="onButtonClick" android:layout_marginTop="256dp" android:layout_marginStart="152dp"/>
+<Button android:id="@+id/s19" style="@style/Key.Science" android:text="M−" android:tag="M-" android:contentDescription="M−" android:onClick="onButtonClick" android:layout_marginTop="256dp" android:layout_marginStart="228dp"/>
+    </RelativeLayout>
+    <RelativeLayout android:id="@+id/keypad" android:layout_below="@id/sciencePad" android:layout_alignWithParentIfMissing="true"
+        android:layout_width="match_parent" android:layout_height="340dp">
+<Button android:id="@+id/k0" style="@style/Key.Clear" android:text="AC" android:tag="AC" android:contentDescription="Hapus semua" android:onClick="onButtonClick" android:layout_marginTop="0dp" android:layout_marginStart="0dp"/>
+<Button android:id="@+id/k1" style="@style/Key.Utility" android:text="(" android:tag="(" android:contentDescription="Buka kurung" android:onClick="onButtonClick" android:layout_marginTop="0dp" android:layout_marginStart="76dp"/>
+<Button android:id="@+id/k2" style="@style/Key.Utility" android:text=")" android:tag=")" android:contentDescription="Tutup kurung" android:onClick="onButtonClick" android:layout_marginTop="0dp" android:layout_marginStart="152dp"/>
+<Button android:id="@+id/k3" style="@style/Key.Utility" android:text="⌫" android:tag="DEL" android:contentDescription="Hapus satu karakter" android:onClick="onButtonClick" android:layout_marginTop="0dp" android:layout_marginStart="228dp"/>
+<Button android:id="@+id/k4" style="@style/Key.Utility" android:text="%" android:tag="%" android:contentDescription="Persen" android:onClick="onButtonClick" android:layout_marginTop="64dp" android:layout_marginStart="0dp"/>
+<Button android:id="@+id/k5" style="@style/Key.Utility" android:text="√" android:tag="sqrt(" android:contentDescription="Akar kuadrat" android:onClick="onButtonClick" android:layout_marginTop="64dp" android:layout_marginStart="76dp"/>
+<Button android:id="@+id/k6" style="@style/Key.Utility" android:text="x²" android:tag="SQUARE" android:contentDescription="Kuadrat" android:onClick="onButtonClick" android:layout_marginTop="64dp" android:layout_marginStart="152dp"/>
+<Button android:id="@+id/k7" style="@style/Key.Operator" android:text="÷" android:tag="/" android:contentDescription="Bagi" android:onClick="onButtonClick" android:layout_marginTop="64dp" android:layout_marginStart="228dp"/>
+<Button android:id="@+id/k8" style="@style/Key" android:text="7" android:tag="7" android:contentDescription="Tujuh" android:onClick="onButtonClick" android:layout_marginTop="128dp" android:layout_marginStart="0dp"/>
+<Button android:id="@+id/k9" style="@style/Key" android:text="8" android:tag="8" android:contentDescription="Delapan" android:onClick="onButtonClick" android:layout_marginTop="128dp" android:layout_marginStart="76dp"/>
+<Button android:id="@+id/k10" style="@style/Key" android:text="9" android:tag="9" android:contentDescription="Sembilan" android:onClick="onButtonClick" android:layout_marginTop="128dp" android:layout_marginStart="152dp"/>
+<Button android:id="@+id/k11" style="@style/Key.Operator" android:text="×" android:tag="*" android:contentDescription="Kali" android:onClick="onButtonClick" android:layout_marginTop="128dp" android:layout_marginStart="228dp"/>
+<Button android:id="@+id/k12" style="@style/Key" android:text="4" android:tag="4" android:contentDescription="Empat" android:onClick="onButtonClick" android:layout_marginTop="192dp" android:layout_marginStart="0dp"/>
+<Button android:id="@+id/k13" style="@style/Key" android:text="5" android:tag="5" android:contentDescription="Lima" android:onClick="onButtonClick" android:layout_marginTop="192dp" android:layout_marginStart="76dp"/>
+<Button android:id="@+id/k14" style="@style/Key" android:text="6" android:tag="6" android:contentDescription="Enam" android:onClick="onButtonClick" android:layout_marginTop="192dp" android:layout_marginStart="152dp"/>
+<Button android:id="@+id/k15" style="@style/Key.Operator" android:text="−" android:tag="-" android:contentDescription="Kurang" android:onClick="onButtonClick" android:layout_marginTop="192dp" android:layout_marginStart="228dp"/>
+<Button android:id="@+id/k16" style="@style/Key" android:text="1" android:tag="1" android:contentDescription="Satu" android:onClick="onButtonClick" android:layout_marginTop="256dp" android:layout_marginStart="0dp"/>
+<Button android:id="@+id/k17" style="@style/Key" android:text="2" android:tag="2" android:contentDescription="Dua" android:onClick="onButtonClick" android:layout_marginTop="256dp" android:layout_marginStart="76dp"/>
+<Button android:id="@+id/k18" style="@style/Key" android:text="3" android:tag="3" android:contentDescription="Tiga" android:onClick="onButtonClick" android:layout_marginTop="256dp" android:layout_marginStart="152dp"/>
+<Button android:id="@+id/k19" style="@style/Key.Operator" android:text="+" android:tag="+" android:contentDescription="Tambah" android:onClick="onButtonClick" android:layout_marginTop="256dp" android:layout_marginStart="228dp"/>
+<Button android:id="@+id/k20" style="@style/Key.Utility" android:text="±" android:tag="SIGN" android:contentDescription="Ubah tanda" android:onClick="onButtonClick" android:layout_marginTop="320dp" android:layout_marginStart="0dp"/>
+<Button android:id="@+id/k21" style="@style/Key" android:text="0" android:tag="0" android:contentDescription="Nol" android:onClick="onButtonClick" android:layout_marginTop="320dp" android:layout_marginStart="76dp"/>
+<Button android:id="@+id/k22" style="@style/Key" android:text="." android:tag="." android:contentDescription="Desimal" android:onClick="onButtonClick" android:layout_marginTop="320dp" android:layout_marginStart="152dp"/>
+<Button android:id="@+id/k23" style="@style/Key.Equal" android:text="=" android:tag="=" android:contentDescription="Hitung hasil" android:onClick="onButtonClick" android:layout_marginTop="320dp" android:layout_marginStart="228dp"/>
+    </RelativeLayout>
+    <TextView android:layout_below="@id/keypad" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center"
+        android:layout_marginTop="16dp" android:layout_marginBottom="8dp" android:text="Hitung sederhana. Jelajahi lebih jauh."
+        android:textColor="@color/muted" android:textSize="11sp"/>
+</RelativeLayout>
+</ScrollView>
+</RelativeLayout>

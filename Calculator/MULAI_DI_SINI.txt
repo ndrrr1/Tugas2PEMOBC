@@ -1,0 +1,12 @@
+CALCULATOR - PROYEK ANDROID STUDIO (JAVA)
+
+1. Ekstrak seluruh ZIP.
+2. Di folder Calculator, klik dua kali PERSIAPAN_WINDOWS.bat (butuh internet).
+3. Android Studio > Open > pilih folder Calculator, bukan folder app.
+4. Tunggu Sync; pasang SDK Platform 35 dan gunakan Gradle JDK 17.
+5. Pilih emulator/HP, lalu tekan Run.
+
+Semua petunjuk, fitur, contoh tombol, dan penjelasan tugas ada di README.md.
+
+Catatan: Gradle Wrapper JAR diunduh otomatis oleh script persiapan.
+Mesin hitung telah diuji. Build APK dan uji emulator belum dijalankan di lingkungan pembuatan.
